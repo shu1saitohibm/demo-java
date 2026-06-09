@@ -24,7 +24,7 @@ public class WebsiteTestService {
 
             HttpEntity<String> entity = new HttpEntity<>("", headers);
 
-            return this.rest.exchange(request.getUrl(), HttpMethod.GET, entity, String.class).getBody();
+            return this.rest.exchange(request.url, HttpMethod.GET, entity, String.class).getBody();
         } catch (HttpClientErrorException | HttpServerErrorException e) {
             return "URL returned status code: " + e.getStatusCode();
         }
